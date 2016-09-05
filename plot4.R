@@ -24,7 +24,7 @@ nvXTicks <- c(1, grep("2007-02-02 00:00:00", dfDataSubset$DateTime), nrow(dfData
 par(mfcol = c(2,2))
 # graph1
 plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_active_power)), 
-     ylab="Global Active Power (kilowatts)", type="n", xaxt="n")
+     ylab="Global Active Power", type="n", xaxt="n")
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_active_power)), type="l")
 axis(1, at=nvXTicks, labels=chvXLabels)
 # graph2
@@ -43,8 +43,9 @@ plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Volt
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Voltage)), type="l")
 axis(1, at=nvXTicks, labels=chvXLabels)
 # graph4
-plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_reactive_power)), 
-     xlab="datetime", ylab="Global_reactive_power", type="n", xaxt="n")
+recordGraphics(plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_reactive_power)), 
+     xlab="datetime", ylab="Global_reactive_power", type="n", xaxt="n"),
+     list(), getNamespace("graphics"))
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_reactive_power)), type="l")
 axis(1, at=nvXTicks, labels=chvXLabels)
 
