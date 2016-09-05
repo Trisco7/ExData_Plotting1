@@ -24,30 +24,30 @@ nvXTicks <- c(1, grep("2007-02-02 00:00:00", dfDataSubset$DateTime), nrow(dfData
 par(mfcol = c(2,2))
 # graph1
 plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_active_power)), 
-     ylab="Global Active Power", type="n", xaxt="n")
+     ylab="Global Active Power", type="n", xaxt="n", cex.lab=0.7, cex.axis=0.7)
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_active_power)), type="l")
-axis(1, at=nvXTicks, labels=chvXLabels)
+axis(1, at=nvXTicks, labels=chvXLabels, cex.axis=0.7)
 # graph2
 plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Sub_metering_1)), 
-     ylab="Energy sub metering", type="n", xaxt="n")
+     ylab="Energy sub metering", type="n", xaxt="n", cex.lab=0.7, cex.axis=0.7)
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Sub_metering_1)), type="l")
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Sub_metering_2)), type="l", col="red")
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Sub_metering_3)), type="l", col="blue")
-axis(1, at=nvXTicks, labels=chvXLabels)
+axis(1, at=nvXTicks, labels=chvXLabels, cex.axis=0.7)
 recordGraphics(legend("topright", legend=c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), 
-                      col=c("black", "red", "blue"), lty=1, pch=NA, bty="n"), 
+                      col=c("black", "red", "blue"), lty=1, pch=NA, bty="n", cex=0.7), 
                list(), getNamespace("graphics"))
 # graph3
 plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Voltage)), 
-     xlab="datetime", ylab="Voltage", type="n", xaxt="n")
+     xlab="datetime", ylab="Voltage", type="n", xaxt="n", cex.lab=0.7, cex.axis=0.7)
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Voltage)), type="l")
-axis(1, at=nvXTicks, labels=chvXLabels)
+axis(1, at=nvXTicks, labels=chvXLabels, cex.axis=0.7)
 # graph4
 recordGraphics(plot(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_reactive_power)), 
-     xlab="datetime", ylab="Global_reactive_power", type="n", xaxt="n"),
+     xlab="datetime", ylab="Global_reactive_power", type="n", xaxt="n", cex.lab=0.7, cex.axis=0.7),
      list(), getNamespace("graphics"))
 lines(as.factor(dfDataSubset$DateTime), as.numeric(as.character(dfDataSubset$Global_reactive_power)), type="l")
-axis(1, at=nvXTicks, labels=chvXLabels)
+axis(1, at=nvXTicks, labels=chvXLabels, cex.axis=0.7)
 
 # save the graph in png file
 dev.copy(png, file="ExData_Plotting1\\plot4.png", width=480, height=480)
